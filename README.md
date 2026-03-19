@@ -57,16 +57,6 @@ Indie Maker • Polímata • Flâneur Digital
 
 ---
 
-## ⚠️ Se ainda não funcionar:
 
-**Teste no GitHub direto:**
-1. Vá no seu repositório no GitHub
-2. Clique em "Add file" → "Create new file"
-3. Nomeie como `README.md` (atenção: .md no final)
-4. Cole o texto acima
-5. Commit → veja se renderizou corretamente
-
-**Problema comum de encoding:**
-Se abrir no Windows Notepad e salvar, ele pode salvar como "ANSI". Use VS Code, Sublime Text ou Notepad++ e certifique-se que está em **UTF-8** (canto inferior direito do VS Code).
 
 **Check rápido:** Se você ver `##` aparecendo como texto normal em vez de virar título grande, é porque o arquivo não está sendo reconhecido como Markdown. Confirme a extensão `.md`!
