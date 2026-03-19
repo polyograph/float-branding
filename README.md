@@ -59,4 +59,3 @@ Indie Maker • Polímata • Flâneur Digital
 
 
 
-**Check rápido:** Se você ver `##` aparecendo como texto normal em vez de virar título grande, é porque o arquivo não está sendo reconhecido como Markdown. Confirme a extensão `.md`!
