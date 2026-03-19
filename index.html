@@ -9,93 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   
   <style>
-    /* Remove o logo antigo de CSS */
-.logo {
-  display: none;
-}
-
-.logo-container {
-  position: relative;
-  margin-bottom: 3rem;
-  animation: float 6s ease-in-out infinite;
-  z-index: 10;
-}
-
-/* Halo luminoso atrás do logo - integra o fundo branco ao tema dark */
-.logo-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(0,245,255,0.1) 40%, transparent 70%);
-  filter: blur(60px);
-  z-index: -1;
-  animation: pulse-glow 4s ease-in-out infinite;
-}
-
-/* Wrapper que "emoldura" o fundo branco da imagem como um card flutuante */
-.logo-wrapper {
-  background: white;
-  padding: 2.5rem 3rem;
-  border-radius: 30px;
-  box-shadow: 
-    0 20px 60px rgba(0,0,0,0.4),
-    0 0 0 1px rgba(255,255,255,0.2),
-    0 0 40px rgba(0,245,255,0.1);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Efeito de brilho na borda do wrapper */
-.logo-wrapper::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #00f5ff, transparent, #0066ff);
-  border-radius: 30px;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.3s;
-}
-
-.logo-wrapper:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 
-    0 30px 80px rgba(0,0,0,0.3),
-    0 0 0 1px rgba(0,245,255,0.3),
-    0 0 60px rgba(0,245,255,0.2);
-}
-
-.logo-wrapper:hover::before {
-  opacity: 0.5;
-}
-
-/* A imagem em si */
-.logo-img {
-  width: 280px;
-  height: auto;
-  display: block;
-  /* Se sua imagem já tiver fundo transparente, comente a linha abaixo */
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.15); }
-}
-
-/* Se você tiver a versão PNG com fundo transparente, use esta classe alternativa: */
-.logo-img-transparent {
-  width: 320px;
-  filter: drop-shadow(0 0 30px rgba(255,255,255,0.3));
-  animation: float 6s ease-in-out infinite;
-}
     :root {
       --cyan: #00f5ff;
       --blue: #0066ff;
@@ -153,65 +66,94 @@
     }
 
     /* Header Hero */
-   <header>
-  <div class="logo-container">
-    <!-- Glow effect atrás do logo -->
-    <div class="logo-glow"></div>
-    
-    <!-- Sua imagem: se tiver fundo branco, mantenha o .logo-wrapper. Se for PNG transparente, remova o wrapper -->
-    <div class="logo-wrapper">
-      <img src="logo-float-branding.png" alt="Float Branding®" class="logo-img" />
-    </div>
-  </div>
-  
-  <h1>Float Branding®</h1>
-  <div class="typewriter" id="typewriter"></div>
-  <p class="subtitle">Design fluido, identidade contínua, estratégia interpolável</p>
-  <a href="#sobre" class="cta-button">Explorar Conceito</a>
-</header>
-
-    .logo-container {
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       position: relative;
-      margin-bottom: 2rem;
-      animation: float 6s ease-in-out infinite;
+      padding: 2rem;
+      text-align: center;
     }
 
+    /* NOVO CSS DO LOGO */
+    .logo-container {
+      position: relative;
+      margin-bottom: 3rem;
+      animation: float 6s ease-in-out infinite;
+      z-index: 10;
+    }
+
+    /* Halo luminoso atrás do logo */
+    .logo-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(0,245,255,0.1) 40%, transparent 70%);
+      filter: blur(60px);
+      z-index: -1;
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+
+    /* Wrapper que emoldura o logo */
+    .logo-wrapper {
+      background: white;
+      padding: 2.5rem 3rem;
+      border-radius: 30px;
+      box-shadow: 
+        0 20px 60px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,255,255,0.1),
+        0 0 40px rgba(0,245,255,0.1);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #00f5ff, transparent, #0066ff);
+      border-radius: 30px;
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.3s;
+    }
+
+    .logo-wrapper:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 
+        0 30px 80px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(0,245,255,0.3),
+        0 0 60px rgba(0,245,255,0.2);
+    }
+
+    .logo-wrapper:hover::before {
+      opacity: 0.5;
+    }
+
+    .logo-img {
+      width: 280px;
+      height: auto;
+      display: block;
+    }
+
+    /* Animações */
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
     }
 
-    .logo {
-      width: 120px;
-      height: 120px;
-      background: linear-gradient(135deg, var(--cyan), var(--blue));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 2rem;
-      color: var(--dark);
-      box-shadow: 0 0 60px rgba(0, 245, 255, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .logo::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-      animation: shine 3s infinite;
-    }
-
-    @keyframes shine {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.15); }
     }
 
     h1 {
@@ -545,6 +487,8 @@
       .cursor, .cursor-dot { display: none; }
       .features-grid { grid-template-columns: 1fr; }
       .creator-section { padding: 2rem; }
+      .logo-img { width: 200px; }
+      .logo-wrapper { padding: 1.5rem 2rem; }
     }
   </style>
 </head>
@@ -564,13 +508,21 @@
     <div class="shape" style="left: 90%; width: 60px; height: 60px; background: linear-gradient(45deg, var(--cyan), transparent); border-radius: 50%; animation-duration: 28s; animation-delay: 15s;"></div>
   </div>
 
+  <!-- HEADER CORRIGIDO COM O LOGO REAL -->
   <header>
     <div class="logo-container">
-      <div class="logo">F</div>
+      <!-- Glow effect atrás do logo -->
+      <div class="logo-glow"></div>
+      
+      <!-- Wrapper branco para o seu logo -->
+      <div class="logo-wrapper">
+        <img src="logo-float-branding.png" alt="Float Branding®" class="logo-img" />
+      </div>
     </div>
+    
     <h1>Float Branding®</h1>
     <div class="typewriter" id="typewriter"></div>
-    <p class="subtitle">Design fluido, identidade contínua, estratégia interpolável. Onde a precisão encontra a adaptabilidade.</p>
+    <p class="subtitle">Design fluido, identidade contínua, estratégia interpolável</p>
     <a href="#sobre" class="cta-button">Explorar Conceito</a>
   </header>
 
