@@ -1,5 +1,3 @@
-Aqui está um README.md completo, sofisticado e alinhado com a estética high-tech da sua landing:
-
 ```markdown
 <p align="center">
   <img src="https://img.shields.io/badge/Float-Branding®-00f5ff?style=for-the-badge&color=00f5ff&labelColor=050508" alt="Float Branding Badge" />
