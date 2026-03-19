@@ -9,6 +9,93 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   
   <style>
+    /* Remove o logo antigo de CSS */
+.logo {
+  display: none;
+}
+
+.logo-container {
+  position: relative;
+  margin-bottom: 3rem;
+  animation: float 6s ease-in-out infinite;
+  z-index: 10;
+}
+
+/* Halo luminoso atrás do logo - integra o fundo branco ao tema dark */
+.logo-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(0,245,255,0.1) 40%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Wrapper que "emoldura" o fundo branco da imagem como um card flutuante */
+.logo-wrapper {
+  background: white;
+  padding: 2.5rem 3rem;
+  border-radius: 30px;
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(255,255,255,0.2),
+    0 0 40px rgba(0,245,255,0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de brilho na borda do wrapper */
+.logo-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00f5ff, transparent, #0066ff);
+  border-radius: 30px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s;
+}
+
+.logo-wrapper:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 
+    0 30px 80px rgba(0,0,0,0.3),
+    0 0 0 1px rgba(0,245,255,0.3),
+    0 0 60px rgba(0,245,255,0.2);
+}
+
+.logo-wrapper:hover::before {
+  opacity: 0.5;
+}
+
+/* A imagem em si */
+.logo-img {
+  width: 280px;
+  height: auto;
+  display: block;
+  /* Se sua imagem já tiver fundo transparente, comente a linha abaixo */
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.15); }
+}
+
+/* Se você tiver a versão PNG com fundo transparente, use esta classe alternativa: */
+.logo-img-transparent {
+  width: 320px;
+  filter: drop-shadow(0 0 30px rgba(255,255,255,0.3));
+  animation: float 6s ease-in-out infinite;
+}
     :root {
       --cyan: #00f5ff;
       --blue: #0066ff;
@@ -66,16 +153,22 @@
     }
 
     /* Header Hero */
-    header {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      padding: 2rem;
-      text-align: center;
-    }
+   <header>
+  <div class="logo-container">
+    <!-- Glow effect atrás do logo -->
+    <div class="logo-glow"></div>
+    
+    <!-- Sua imagem: se tiver fundo branco, mantenha o .logo-wrapper. Se for PNG transparente, remova o wrapper -->
+    <div class="logo-wrapper">
+      <img src="logo-float-branding.png" alt="Float Branding®" class="logo-img" />
+    </div>
+  </div>
+  
+  <h1>Float Branding®</h1>
+  <div class="typewriter" id="typewriter"></div>
+  <p class="subtitle">Design fluido, identidade contínua, estratégia interpolável</p>
+  <a href="#sobre" class="cta-button">Explorar Conceito</a>
+</header>
 
     .logo-container {
       position: relative;
